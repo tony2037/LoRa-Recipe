@@ -2,7 +2,8 @@
 set -e  # 如果任何指令失敗，立即停止腳本
 
 WORKSPACE="/workspace"
-REPO_URL="https://github.com/Teckt/wan-lora-trainer.git"
+REPO_URL="https://github.com/kohya-ss/musubi-tuner"
+#REPO_URL="https://github.com/Teckt/wan-lora-trainer.git"
 REPO_DIR="$WORKSPACE/wan-lora-trainer"
 MODEL_DIR="$WORKSPACE/models"
 
@@ -29,6 +30,7 @@ pip install --upgrade pip
 
 # 安裝核心依賴 (根據 repo 文檔)
 # 注意：PyTorch 2.5.1 已包含在 Base Image 中，這裡安裝 repo 的其餘依賴
+pip install torch torchvision
 pip install -e .
 
 # 安裝額外工具
